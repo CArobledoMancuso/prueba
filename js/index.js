@@ -1,1 +1,3 @@
-me cargue la base de datos , pantallazo azul
+function laCajaDePandora(numero){
+    // proximamente escribiremos codigo aqui
+    }
