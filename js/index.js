@@ -5,18 +5,7 @@ function convertirNumero(num) {
         return num.toString(16); // Convertir a hexadecimal
     }
 }
-// index.js
 
-// Función para convertir números a binario o hexadecimal
-function convertirNumero(num) {
-    if (num % 2 === 0) {
-        return num.toString(2); // Convertir a binario
-    } else {
-        return num.toString(16); // Convertir a hexadecimal
-    }
-}
-
-// Función con tu nombre que retorna un objeto con nombre, edad y nacionalidad
 function miInformacion() {
     return {
         nombre: 'Juan Pérez',
@@ -25,7 +14,20 @@ function miInformacion() {
     };
 }
 
-// Ejemplos de uso
-console.log(convertirNumero(4));  // Output: '100'
-console.log(convertirNumero(7));  // Output: '7'
-console.log(miInformacion());     // Output: { nombre: 'Juan Pérez', edad: 30, nacionalidad: 'Argentina' }
+// Nueva función
+function laCajaDePandora(num){
+    if (num % 2 === 0) {
+      return num.toString(2); // Convertir a binario
+    } else {
+      return num.toString(16); // Convertir a hexadecimal
+    }
+}
+
+// Nueva función
+function cristianRobledo() {
+    return {
+      nombre: "Cristian Robledo",
+      edad: 30, // Reemplaza con tu edad real
+      nacionalidad: "Argentina" // Reemplaza con tu nacionalidad real
+    };
+  }
