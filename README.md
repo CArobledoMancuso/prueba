@@ -1,76 +1,36 @@
-# Guía del Módulo de Autenticación con JWT en NestJS
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Descripción
+## Getting Started
 
-Este módulo de autenticación en NestJS utiliza JWT para autenticar a los usuarios. Incluye funcionalidad para registro (sign up), inicio de sesión (sign in) y protección de rutas mediante guards.
-
-
-
-## Configuración de Variables de Entorno
-Crea un archivo `.env` en la raíz del proyecto con el siguiente contenido:
+First, run the development server:
 
 ```bash
-`JWT_SECRET=your_secret_key`
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-`JWT_SECRET` es la clave secreta utilizada para firmar los tokens JWT.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## API Referencia
-#### logeo
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-```http
-  POST /auth/signin
-```
-#### Body:
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-| Parametros | Type     | Ejemplo                     |
-| :-------- | :------- | :------------------------- |
-| `email`      | `string` | **requerido**. juan@mail.com |
-| `password`      | `string` | **requerido**.  123@Admin |
+## Learn More
 
- - #### exitoso
-- Retorna un token JWT si las credenciales son correctas.
-ejemplo:
-```http
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-```
--  #### en caso de error 
+To learn more about Next.js, take a look at the following resources:
 
-   - status: 200, description: 'Inicio de sesión exitoso'
-   - status: 400, description: 'Solicitud incorrecta. Campos faltantes o inválidos.'
-   - status: 401, description: 'No autorizado. Correo electrónico o contraseña incorrectos.'
-   - status: 404, description: 'Usuario no encontrado.'
-   - status: 500, description: 'Error interno del servidor. Ocurrió un error inesperado.'
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-#### Registro
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-```http
-  POST /auth/signup
-```
-#### body:
-| Parametros | Type     | Ejemplo                     |
-| :-------- | :------- | :-------------------------------- |
-| `name`      | `string` | **requerido**. Juan  |
-| `email`      | `string` | **requerido**. juan@mail.com |
-| `password`      | `string` | **requerido**.  123@Admin |
-| `passwordConfirm`      | `string` |**requerido**.123@Admin |
-| `address`      | `string` | **requerido**.123 Calle Principal |
-| `phone`      | `string` | **requerido**. 555-1234 |
-| `country`      | `string` | **requerido**. México |
-| `city`      | `string` | **requerido**. Ciudad de México |
-| `createdAt`      | `string` | **requerido**. 2024-07-23T17:00:00Z |
-| `birthday`      | `IsDateString` | **requerido**. 1990-05-15T17:00:00Z |
-| `allergies`      | `string` | leche |
-| `picture`      | `string` | http://example.com/picture.jpg |
-| `auth0Id`      | `string` | auth0|1234567890abcdef |
+## Deploy on Vercel
 
- - #### exitoso
-  - status: 201, description: 'Usuario registrado exitosamente'
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
--  #### en caso de error 
-
-   - status: 400, description: 'Solicitud incorrecta. Campos faltantes o inválidos.'
-   - status: 409, description: 'Conflicto. Usuario con este correo electrónico ya existe.' 
-   - status: 500, description: 'Error interno del servidor. Ocurrió un error inesperado.'
-
-
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
